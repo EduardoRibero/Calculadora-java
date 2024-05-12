@@ -37,24 +37,25 @@ public class Tela extends JFrame {
 	 * Create the frame.
 	 */
 	public Tela() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 180, 300);
+		setBounds(100, 100, 369, 434);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblVisor = new JLabel("0");
-		lblVisor.setBackground(Color.GREEN);
+		JLabel lblVisor = new JLabel("45324525452");
+		lblVisor.setBackground(Color.WHITE);
 		lblVisor.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblVisor.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblVisor.setFont(new Font("Arial", Font.PLAIN, 35));
 		lblVisor.setEnabled(false);
-		lblVisor.setBounds(0, 0, 164, 33);
+		lblVisor.setBounds(0, 11, 353, 105);
 		contentPane.add(lblVisor);
 		
 		JPanel panelNumeros = new JPanel();
-		panelNumeros.setBounds(0, 91, 116, 159);
+		panelNumeros.setBounds(0, 184, 265, 213);
 		contentPane.add(panelNumeros);
 		panelNumeros.setLayout(new GridLayout(4, 0, 0, 0));
 		
@@ -70,8 +71,8 @@ public class Tela extends JFrame {
 		JButton btnQuatro = new JButton("4");
 		panelNumeros.add(btnQuatro);
 		
-		JButton btncinco = new JButton("5");
-		panelNumeros.add(btncinco);
+		JButton btnCinco = new JButton("5");
+		panelNumeros.add(btnCinco);
 		
 		JButton btnSeis = new JButton("6");
 		panelNumeros.add(btnSeis);
@@ -86,31 +87,52 @@ public class Tela extends JFrame {
 		panelNumeros.add(btnTres);
 		
 		JButton btnVirgula = new JButton(",");
+		btnVirgula.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panelNumeros.add(btnVirgula);
 		
 		JButton btnZero = new JButton("0");
 		panelNumeros.add(btnZero);
 		
 		JButton btnIgual = new JButton("=");
-		btnIgual.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 11));
+		btnIgual.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panelNumeros.add(btnIgual);
 		
-		JPanel panelOperações = new JPanel();
-		panelOperações.setBounds(126, 91, 38, 159);
-		contentPane.add(panelOperações);
-		panelOperações.setLayout(new GridLayout(4, 0, 0, 0));
+		JPanel panelOperacoes = new JPanel();
+		panelOperacoes.setBounds(267, 184, 86, 213);
+		contentPane.add(panelOperacoes);
+		panelOperacoes.setLayout(new GridLayout(4, 0, 0, 0));
 		
-		JButton btnMultiplicar = new JButton("x");
-		panelOperações.add(btnMultiplicar);
+		JButton btnMultiplicar = new JButton("Ⅹ");
+		btnMultiplicar.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panelOperacoes.add(btnMultiplicar);
 		
 		JButton btnDividir = new JButton("/");
-		panelOperações.add(btnDividir);
+		btnDividir.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panelOperacoes.add(btnDividir);
 		
 		JButton btnSubtrair = new JButton("-");
-		panelOperações.add(btnSubtrair);
+		btnSubtrair.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panelOperacoes.add(btnSubtrair);
 		
-		JButton btnSomar = new JButton("+");
-		btnSomar.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 11));
-		panelOperações.add(btnSomar);
+		JButton btnSomar = new JButton("+\r\n");
+		btnSomar.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panelOperacoes.add(btnSomar);
+		
+		JPanel panelMenu = new JPanel();
+		panelMenu.setBounds(0, 127, 353, 56);
+		contentPane.add(panelMenu);
+		panelMenu.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		JButton btnHistorico = new JButton("historic");
+		panelMenu.add(btnHistorico);
+		
+		JButton btnSair = new JButton("Exit");
+		panelMenu.add(btnSair);
+		
+		JButton btnClean = new JButton("clean");
+		panelMenu.add(btnClean);
+		
+		JButton btnDelete = new JButton("delete");
+		panelMenu.add(btnDelete);
 	}
 }
