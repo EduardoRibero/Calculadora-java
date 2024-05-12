@@ -9,34 +9,44 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import java.awt.Color;
 
-public class Tela extends JFrame {
+public class Tela extends JFrame implements ActionListener {
 
-	private static final long serialVersionUID = 1L;
+	private String operacao;
+	private String value1;
+	private String value2;
+	private String res;
 	private JPanel contentPane;
+	private JButton btnUm = new JButton("1");
+	private JButton btnDois = new JButton("2");
+	private JButton btnTres = new JButton("3");
+	private JButton btnQuatro = new JButton("4");
+	private JButton btnCinco = new JButton("5");
+	private JButton btnSeis = new JButton("6");
+	private JButton btnSete = new JButton("7");
+	private JButton btnOito = new JButton("8");
+	private JButton btnNove = new JButton("9");
+	private JButton btnZero = new JButton("0");
+	private JLabel lblVisor = new JLabel("0");
+	private JButton btnVirgula = new JButton(",");
+	private JButton btnDelete = new JButton("delete");
+	private JButton btnIgual = new JButton("=");
+	private JButton btnMultiplicar = new JButton("Ⅹ");
+	private JButton btnClean = new JButton("clean");
+	private JButton btnExit = new JButton("Exit");
+	private JButton btnHistoric = new JButton("historic");
+	private JButton btnSomar = new JButton("+\r\n");
+	private JButton btnSubtrair = new JButton("-");
+	private JButton btnDividir = new JButton("/");
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Tela frame = new Tela();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	/**
-	 * Create the frame.
-	 */
 	public Tela() {
+		setVisible(true);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 369, 434);
@@ -46,7 +56,6 @@ public class Tela extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblVisor = new JLabel("45324525452");
 		lblVisor.setBackground(Color.WHITE);
 		lblVisor.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblVisor.setFont(new Font("Arial", Font.PLAIN, 35));
@@ -59,41 +68,29 @@ public class Tela extends JFrame {
 		contentPane.add(panelNumeros);
 		panelNumeros.setLayout(new GridLayout(4, 0, 0, 0));
 		
-		JButton btnSete = new JButton("7");
 		panelNumeros.add(btnSete);
 		
-		JButton btnOito = new JButton("8");
 		panelNumeros.add(btnOito);
 		
-		JButton btnNove = new JButton("9");
 		panelNumeros.add(btnNove);
 		
-		JButton btnQuatro = new JButton("4");
 		panelNumeros.add(btnQuatro);
 		
-		JButton btnCinco = new JButton("5");
 		panelNumeros.add(btnCinco);
 		
-		JButton btnSeis = new JButton("6");
 		panelNumeros.add(btnSeis);
 		
-		JButton btnUm = new JButton("1");
 		panelNumeros.add(btnUm);
 		
-		JButton btnDois = new JButton("2");
 		panelNumeros.add(btnDois);
 		
-		JButton btnTres = new JButton("3");
 		panelNumeros.add(btnTres);
 		
-		JButton btnVirgula = new JButton(",");
 		btnVirgula.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panelNumeros.add(btnVirgula);
 		
-		JButton btnZero = new JButton("0");
 		panelNumeros.add(btnZero);
 		
-		JButton btnIgual = new JButton("=");
 		btnIgual.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panelNumeros.add(btnIgual);
 		
@@ -102,19 +99,15 @@ public class Tela extends JFrame {
 		contentPane.add(panelOperacoes);
 		panelOperacoes.setLayout(new GridLayout(4, 0, 0, 0));
 		
-		JButton btnMultiplicar = new JButton("Ⅹ");
 		btnMultiplicar.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panelOperacoes.add(btnMultiplicar);
 		
-		JButton btnDividir = new JButton("/");
 		btnDividir.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panelOperacoes.add(btnDividir);
 		
-		JButton btnSubtrair = new JButton("-");
 		btnSubtrair.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panelOperacoes.add(btnSubtrair);
 		
-		JButton btnSomar = new JButton("+\r\n");
 		btnSomar.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panelOperacoes.add(btnSomar);
 		
@@ -123,16 +116,119 @@ public class Tela extends JFrame {
 		contentPane.add(panelMenu);
 		panelMenu.setLayout(new GridLayout(1, 0, 0, 0));
 		
-		JButton btnHistorico = new JButton("historic");
-		panelMenu.add(btnHistorico);
+		panelMenu.add(btnHistoric);
 		
-		JButton btnSair = new JButton("Exit");
-		panelMenu.add(btnSair);
+		panelMenu.add(btnExit);
 		
-		JButton btnClean = new JButton("clean");
 		panelMenu.add(btnClean);
 		
-		JButton btnDelete = new JButton("delete");
 		panelMenu.add(btnDelete);
+		
+		 btnUm.addActionListener(this);
+	     btnDois.addActionListener(this);
+	     btnTres.addActionListener(this);
+	     btnQuatro.addActionListener(this);
+	     btnCinco.addActionListener(this);
+	     btnSeis.addActionListener(this);
+	     btnSete.addActionListener(this);
+	     btnOito.addActionListener(this);
+	     btnNove.addActionListener(this);
+	     btnZero.addActionListener(this);
+	     
+	     btnSomar.addActionListener(this);
+	     btnDividir.addActionListener(this);
+	     btnSubtrair.addActionListener(this);
+	     btnMultiplicar.addActionListener(this);
+	     
+	     btnHistoric.addActionListener(this);
+	     btnExit.addActionListener(this);
+	     btnClean.addActionListener(this);
+	     btnDelete.addActionListener(this);
+	     btnVirgula.addActionListener(this);
 	}
+	
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == btnUm) {
+			if(lblVisor.getText().equals("0") || lblVisor.getText() == null) {
+				lblVisor.setText("1");
+			}else {
+				lblVisor.setText(lblVisor.getText() + "1");
+			}
+		}
+		if(e.getSource() == btnDois) {
+			if(lblVisor.getText().equals("0") || lblVisor.getText() == null) {
+				lblVisor.setText("2");
+			}else {
+				lblVisor.setText(lblVisor.getText() + "2");
+			}
+		}
+		if(e.getSource() == btnTres) {
+			if(lblVisor.getText().equals("0") || lblVisor.getText() == null) {
+				lblVisor.setText("3");
+			}else {
+				lblVisor.setText(lblVisor.getText() + "3");
+			}
+		}
+		if(e.getSource() == btnQuatro) {
+			if(lblVisor.getText().equals("0") || lblVisor.getText() == null) {
+				lblVisor.setText("4");
+			}else {
+				lblVisor.setText(lblVisor.getText() + "4");
+			}
+		}
+		if(e.getSource() == btnCinco) {
+			if(lblVisor.getText().equals("0") || lblVisor.getText() == null) {
+				lblVisor.setText("5");
+			}else {
+				lblVisor.setText(lblVisor.getText() + "5");
+			}
+		}
+		if(e.getSource() == btnSeis) {
+			if(lblVisor.getText().equals("0") || lblVisor.getText() == null) {
+				lblVisor.setText("6");
+			}else {
+				lblVisor.setText(lblVisor.getText() + "6");
+			}
+		}
+		if(e.getSource() == btnSete) {
+			if(lblVisor.getText().equals("0") || lblVisor.getText() == null) {
+				lblVisor.setText("7");
+			}else {
+				lblVisor.setText(lblVisor.getText() + "7");
+			}
+		}
+		if(e.getSource() == btnOito) {
+			if(lblVisor.getText().equals("0") || lblVisor.getText() == null) {
+				lblVisor.setText("8");
+			}else {
+				lblVisor.setText(lblVisor.getText() + "8");
+			}
+		}
+		if(e.getSource() == btnNove) {
+			if(lblVisor.getText().equals("0") || lblVisor.getText() == null) {
+				lblVisor.setText("9");
+			}else {
+				lblVisor.setText(lblVisor.getText() + "9");
+			}
+		}
+		if(e.getSource() == btnZero) {
+			if(lblVisor.getText().equals("0") || lblVisor.getText() == null) {
+				lblVisor.setText("0");
+			}else {
+				lblVisor.setText(lblVisor.getText() + "0");
+			}
+		}
+		if(e.getSource() == btnVirgula) {
+			if(lblVisor.getText().equals("0") || lblVisor.getText() == null || lblVisor.getText().contains(",") == true) {
+				
+			}else {
+				lblVisor.setText(lblVisor.getText() + ",");
+			}
+		}
+		if(e.getSource() == btnClean) {
+			lblVisor.setText("0");
+		}
+		
+	}
+
 }
