@@ -21,7 +21,7 @@ public class Repository {
         
         try {
             connection = DriverManager.getConnection(url, user, password);
-            System.out.println("Conexão bem-sucedida!");
+//            System.out.println("Conexão bem-sucedida!");
         } catch (SQLException e) {
             System.out.println("Falha na conexão!");
             e.printStackTrace();
@@ -40,7 +40,7 @@ public class Repository {
             int linhasAfetadas = statement.executeUpdate();
 
             if (linhasAfetadas > 0) {
-                System.out.println("Dados inseridos com sucesso!");
+//                System.out.println("Dados inseridos com sucesso!");
             } else {
                 System.out.println("Falha ao inserir dados.");
             }
@@ -53,7 +53,7 @@ public class Repository {
     public void close() {
     	try {
 			connection.close();
-			System.out.println("Connection close!");
+//			System.out.println("Connection close!");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -68,9 +68,9 @@ public class Repository {
         try{
             PreparedStatement statement =this.connection.prepareStatement(sql);
             result = statement.executeQuery();
-            System.out.println("Get bem sucedido");
+//            System.out.println("Get bem sucedido");
             while(result.next()) {
-            	System.out.println(result.getString("valor1"));
+//            	System.out.println(result.getString("valor1"));
             	res.add(result.getString("valor1")+ result.getString("operacao") +result.getString("valor2")+" = "+result.getString("res"));
             }
         }catch(Exception e){
