@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import calculadorajava.controller.Controller;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
@@ -43,6 +46,7 @@ public class Tela extends JFrame implements ActionListener {
 	private JButton btnSomar = new JButton("+\r\n");
 	private JButton btnSubtrair = new JButton("-");
 	private JButton btnDividir = new JButton("/");
+	private Controller controller = new Controller();
 
 
 	public Tela() {
@@ -145,6 +149,7 @@ public class Tela extends JFrame implements ActionListener {
 	     btnClean.addActionListener(this);
 	     btnDelete.addActionListener(this);
 	     btnVirgula.addActionListener(this);
+	     btnIgual.addActionListener(this);
 	}
 	
 	public void actionPerformed(ActionEvent e) {
@@ -232,10 +237,45 @@ public class Tela extends JFrame implements ActionListener {
 			System.exit(0);
 		}
 		if(e.getSource() == btnDelete) {
-			if(lblVisor.getText() != null && !(lblVisor.getText().length() < 0)) {
-			String str = lblVisor.getText();
-			str = str.substring(0,str.length() - 1);
-			lblVisor.setText(str);
+			if(lblVisor.getText() != null && !(lblVisor.getText().length() <= 0) && lblVisor.getText() != "0") {
+				String str = lblVisor.getText();
+				str = str.substring(0,str.length() - 1);
+				lblVisor.setText(str);
+			}
+		}
+		if(e.getSource() == btnSomar) {
+			if(lblVisor.getText() != null) {				
+				value1 = lblVisor.getText();
+				operacao = "soma";
+				lblVisor.setText("0");
+			}
+		}
+		if(e.getSource() == btnSubtrair) {
+			if(lblVisor.getText() != null) {				
+				value1 = lblVisor.getText();
+				operacao = "subtrair";
+				lblVisor.setText("0");
+			}
+		}
+		if(e.getSource() == btnMultiplicar) {
+			if(lblVisor.getText() != null) {				
+				value1 = lblVisor.getText();
+				operacao = "multiplicar";
+				lblVisor.setText("0");
+			}
+		}
+		if(e.getSource() == btnDividir) {
+			if(lblVisor.getText() != null) {				
+				value1 = lblVisor.getText();
+				operacao = "dividir";
+				lblVisor.setText("0");
+			}
+		}
+		if(e.getSource() == btnIgual) {
+			if(lblVisor.getText() != null) {				
+				value2 = lblVisor.getText();
+				res = controller.operacao(value1, operacao, value2);
+				lblVisor.setText(res);
 			}
 		}
 	}

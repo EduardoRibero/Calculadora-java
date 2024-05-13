@@ -12,23 +12,22 @@ public class Controller {
 		 String resultadoString = "";
 		
 		switch (operacao) {
-			case "somar": {
+			case "soma": {
 				resultado = service.somar(Double.valueOf(valor1).doubleValue(), Double.valueOf(valor2).doubleValue());
 				resultadoString = Double.toString(resultado);
-			}
-			case "subitrair": {
+			}break;
+			case "subtrair": {
 				resultado = service.subtrair(Double.valueOf(valor1).doubleValue(), Double.valueOf(valor2).doubleValue());
 				resultadoString = Double.toString(resultado);
-			}
+			}break;
 			case "dividir": {
 				resultado = service.dividir(Double.valueOf(valor1).doubleValue(), Double.valueOf(valor2).doubleValue());
 				resultadoString = Double.toString(resultado);
-			}		
+			}break;	
 			case "multiplicar": {
 				resultado = service.multiplicar(Double.valueOf(valor1).doubleValue(), Double.valueOf(valor2).doubleValue());
 				resultadoString = Double.toString(resultado);
-			}
-			break;
+			}break;
 		}
 		
 		return resultadoString;
