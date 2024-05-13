@@ -228,7 +228,16 @@ public class Tela extends JFrame implements ActionListener {
 		if(e.getSource() == btnClean) {
 			lblVisor.setText("0");
 		}
-		
+		if(e.getSource() == btnExit) {
+			System.exit(0);
+		}
+		if(e.getSource() == btnDelete) {
+			if(lblVisor.getText() != null && !(lblVisor.getText().length() < 0)) {
+			String str = lblVisor.getText();
+			str = str.substring(0,str.length() - 1);
+			lblVisor.setText(str);
+			}
+		}
 	}
 
 }
