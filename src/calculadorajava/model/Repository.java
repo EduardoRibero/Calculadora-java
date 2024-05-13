@@ -71,7 +71,7 @@ public class Repository {
 //            System.out.println("Get bem sucedido");
             while(result.next()) {
 //            	System.out.println(result.getString("valor1"));
-            	res.add(result.getString("valor1")+ result.getString("operacao") +result.getString("valor2")+" = "+result.getString("res"));
+            	res.add(result.getString("res")+" = "+result.getString("valor2")+ result.getString("operacao") +result.getString("valor1"));
             }
         }catch(Exception e){
 			e.printStackTrace();
