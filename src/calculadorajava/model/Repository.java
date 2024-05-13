@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Repository {
@@ -57,26 +59,24 @@ public class Repository {
 		}
     }
 	
-    public String get(){
+    public ArrayList<String> get(){
     	
         String sql = "SELECT * FROM tb_calculadorajava";
         ResultSet result;
+        ArrayList<String> res = new ArrayList();
         
         try{
             PreparedStatement statement =this.connection.prepareStatement(sql);
             result = statement.executeQuery();
             System.out.println("Get bem sucedido");
-            sql = result.toString();
-            System.out.println(sql);
-            
-            return sql;
-            
+            while(result.next()) {
+            	System.out.println(result.getString("valor1"));
+            	res.add(result.getString("valor1")+ result.getString("operacao") +result.getString("valor2")+" = "+result.getString("res"));
+            }
         }catch(Exception e){
-        	
 			e.printStackTrace();
-			
         }
         
-		return sql;
+		return res;
     }
 }

@@ -17,18 +17,22 @@ public class Controller {
 			case "soma": {
 				resultado = service.somar(Double.valueOf(valor1).doubleValue(), Double.valueOf(valor2).doubleValue());
 				resultadoString = Double.toString(resultado);
+				operacao = " + ";
 			}break;
 			case "subtrair": {
 				resultado = service.subtrair(Double.valueOf(valor1).doubleValue(), Double.valueOf(valor2).doubleValue());
 				resultadoString = Double.toString(resultado);
+				operacao = " - ";
 			}break;
 			case "dividir": {
 				resultado = service.dividir(Double.valueOf(valor1).doubleValue(), Double.valueOf(valor2).doubleValue());
 				resultadoString = Double.toString(resultado);
+				operacao = " / ";
 			}break;	
 			case "multiplicar": {
 				resultado = service.multiplicar(Double.valueOf(valor1).doubleValue(), Double.valueOf(valor2).doubleValue());
 				resultadoString = Double.toString(resultado);
+				operacao = " x ";
 			}break;
 		}
 		

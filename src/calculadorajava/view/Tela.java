@@ -274,7 +274,9 @@ public class Tela extends JFrame implements ActionListener {
 				lblVisor.setText(res);
 			}
 		}
-
+		if(e.getSource() == btnHistoric) {
+			new TelaHistoric();
+		}
 	}
 
 }
