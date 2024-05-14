@@ -10,17 +10,15 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import java.awt.Color;
 
 public class Tela extends JFrame implements ActionListener {
 
-	private String operacao;
-	private String value1;
-	private String value2;
-	private String res;
 	private JPanel contentPane;
+	private JPanel panelNumeros = new JPanel();
+	private JPanel panelOperacoes = new JPanel();
+	private JPanel panelMenu = new JPanel();
 	private JButton btnUm = new JButton("1");
 	private JButton btnDois = new JButton("2");
 	private JButton btnTres = new JButton("3");
@@ -43,6 +41,10 @@ public class Tela extends JFrame implements ActionListener {
 	private JButton btnSubtrair = new JButton("-");
 	private JButton btnDividir = new JButton("/");
 	private Controller controller = new Controller();
+	private String operacao;
+	private String value1;
+	private String value2;
+	private String res;
 
 
 	public Tela() {
@@ -63,7 +65,6 @@ public class Tela extends JFrame implements ActionListener {
 		lblVisor.setBounds(0, 11, 353, 105);
 		contentPane.add(lblVisor);
 		
-		JPanel panelNumeros = new JPanel();
 		panelNumeros.setBounds(0, 184, 265, 213);
 		contentPane.add(panelNumeros);
 		panelNumeros.setLayout(new GridLayout(4, 0, 0, 0));
@@ -94,7 +95,6 @@ public class Tela extends JFrame implements ActionListener {
 		btnIgual.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panelNumeros.add(btnIgual);
 		
-		JPanel panelOperacoes = new JPanel();
 		panelOperacoes.setBounds(267, 184, 86, 213);
 		contentPane.add(panelOperacoes);
 		panelOperacoes.setLayout(new GridLayout(4, 0, 0, 0));
@@ -111,7 +111,6 @@ public class Tela extends JFrame implements ActionListener {
 		btnSomar.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panelOperacoes.add(btnSomar);
 		
-		JPanel panelMenu = new JPanel();
 		panelMenu.setBounds(0, 127, 353, 56);
 		contentPane.add(panelMenu);
 		panelMenu.setLayout(new GridLayout(1, 0, 0, 0));
@@ -134,6 +133,7 @@ public class Tela extends JFrame implements ActionListener {
 	     btnOito.addActionListener(this);
 	     btnNove.addActionListener(this);
 	     btnZero.addActionListener(this);
+	     btnVirgula.addActionListener(this);
 	     
 	     btnSomar.addActionListener(this);
 	     btnDividir.addActionListener(this);
@@ -144,7 +144,6 @@ public class Tela extends JFrame implements ActionListener {
 	     btnExit.addActionListener(this);
 	     btnClean.addActionListener(this);
 	     btnDelete.addActionListener(this);
-	     btnVirgula.addActionListener(this);
 	     btnIgual.addActionListener(this);
 	}
 	

@@ -1,7 +1,6 @@
 package calculadorajava.controller;
 
 import calculadorajava.model.Repository;
-
 import calculadorajava.model.Service;
 
 public class Controller {
@@ -35,10 +34,8 @@ public class Controller {
 				operacao = " x ";
 			}break;
 		}
-		
-		jpa.conectar();
-		jpa.inserirDados(valor1, operacao, valor2, resultadoString);
-		jpa.close();
+	
+		jpa.add(valor1, operacao, valor2, resultadoString);
 		
 		return resultadoString;
 	}

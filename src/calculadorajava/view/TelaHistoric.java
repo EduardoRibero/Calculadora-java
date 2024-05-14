@@ -21,7 +21,6 @@ public class TelaHistoric extends JFrame {
 	private JLabel lbl = new JLabel();
 	
 	public TelaHistoric() {
-		jpa.conectar();
 		sqlData = jpa.get();
 		setVisible(true);
 		setBounds(100, 100, 304, 401);
@@ -30,7 +29,7 @@ public class TelaHistoric extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(1, 0, 0, 0));
 		JList lista = new JList(sqlData.toArray());
-		 lista.setCellRenderer(new RightAlignedListCellRenderer());
+		lista.setCellRenderer(new RightAlignedListCellRenderer());
 		contentPane.add(lista);
 	}
 
