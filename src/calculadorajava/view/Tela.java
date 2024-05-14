@@ -268,7 +268,7 @@ public class Tela extends JFrame implements ActionListener {
 			}
 		}
 		if(e.getSource() == btnIgual) {
-			if(lblVisor.getText() != null) {				
+			if(lblVisor.getText() != null && lblVisor.getText() != "0") {				
 				value2 = lblVisor.getText();
 				res = controller.operacao(value1, operacao, value2);
 				lblVisor.setText(res);

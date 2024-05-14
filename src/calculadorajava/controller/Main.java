@@ -1,4 +1,4 @@
-package calculadorajava;
+package calculadorajava.controller;
 
 import calculadorajava.view.Tela;
 
