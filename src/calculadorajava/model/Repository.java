@@ -50,7 +50,7 @@ public class Repository {
             result = statement.executeQuery();
 
             while(result.next()) {
-            	res.add(result.getString("res")+" = "+result.getString("valor2")+ result.getString("operacao") +result.getString("valor1"));
+            	res.add(result.getString("valor1")+ result.getString("operacao") + result.getString("valor2")+ " = " + result.getString("res"));
             }
             
             connection.close();

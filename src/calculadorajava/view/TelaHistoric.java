@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
 import calculadorajava.model.Repository;
@@ -29,8 +30,8 @@ public class TelaHistoric extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(1, 0, 0, 0));
 		JList lista = new JList(sqlData.toArray());
-		lista.setCellRenderer(new RightAlignedListCellRenderer());
-		contentPane.add(lista);
+		JScrollPane scrollPane = new JScrollPane(lista);
+		contentPane.add(scrollPane);
 	}
 
 }
