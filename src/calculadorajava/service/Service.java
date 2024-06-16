@@ -1,4 +1,4 @@
-package calculadorajava.model;
+package calculadorajava.service;
 
 public class Service {
 	

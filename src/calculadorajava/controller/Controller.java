@@ -1,7 +1,8 @@
 package calculadorajava.controller;
 
-import calculadorajava.model.Repository;
-import calculadorajava.model.Service;
+import calculadorajava.repository.Repository;
+
+import calculadorajava.service.Service;
 
 public class Controller {
 	

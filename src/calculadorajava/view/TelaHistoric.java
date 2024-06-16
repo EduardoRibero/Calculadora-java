@@ -8,7 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
-import calculadorajava.model.Repository;
+import calculadorajava.repository.Repository;
+
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
