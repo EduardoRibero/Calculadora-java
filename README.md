@@ -1,23 +1,35 @@
 # Calculadora JAVA
-Este projeto é puramente para fins didáticos, fiz essa calculadora afim de explorar minhas habilidades básicas na linhagem de programação JAVA.
+Este projeto é uma calculadora básica desenvolvida em Java para fins didáticos, explorando habilidades fundamentais na programação. A calculadora realiza operações matemáticas básicas e armazena o histórico das operações em um banco de dados PostgreSQL.
 
 ## Tecnologias Utilizadas:
 - Java 17
 - PostgreSQL 16
 - Java Swing
-  
+
 ## Estrutura do Projeto
-Esta calculadora feita em Java inicialmente possui as quatro operações principais da matemática como soma, subtração, 
-multiplicação, divisão, além de gravar as operações realizadas em um banco de dados SQL.
+Funcionalidades:
 
-- MODEL:
- Camada responsável pelas Regras de negócio e Permanência de dados.
+Operações Matemáticas:
 
-- VIEW:
+Adição
+Subtração
+Multiplicação
+Divisão
+
+Registro de Operações:
+Armazena cada operação realizada em um banco de dados PostgreSQL.
+
+- Service:
+ Camada responsável por realizar as operações matemáticas.
+
+- Repository:
+ Camada responsável por realizar as operações relacionadas ao banco de dados.
+
+- Controller: 
+ Camada responsável por realizar a conexão entre as camadas Services e Repository.
+
+- View:
  Camada responsável pela interface gráfica com  JFrame.
-
-- CONTROLLER: 
-Responsável por realizar a conexão entre as camadas Model e View.
 
 ## Registro:
 ![image](https://github.com/EduardoRibero/Calculadora-java/assets/110073561/7a99c8b6-749c-444d-ba35-373ff6308c2a)
